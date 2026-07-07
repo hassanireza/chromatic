@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" width="100%">
+  <defs>
+    <style>
+      .lbl { font-family: Helvetica, Arial, sans-serif; font-size: 12.5px; fill: #F0EDE8; }
+      .sub { font-family: Helvetica, Arial, sans-serif; font-size: 10.5px; fill: rgba(240,237,232,0.5); }
+    </style>
+  </defs>
+  <rect width="900" height="340" fill="#07070D"/>
+
+  <!-- Complementary -->
+  <g transform="translate(90,90)">
+    <circle r="55" fill="none" stroke="rgba(240,237,232,0.18)"/>
+    <circle cx="55" cy="0" r="10" fill="#2563EB"/>
+    <circle cx="-55" cy="0" r="10" fill="#E8874A"/>
+    <line x1="-55" y1="0" x2="55" y2="0" stroke="rgba(240,237,232,0.3)" stroke-dasharray="3 3"/>
+    <text x="0" y="90" text-anchor="middle" class="lbl">Complementary</text>
+    <text x="0" y="106" text-anchor="middle" class="sub">180 degrees apart</text>
+  </g>
+
+  <!-- Analogous -->
+  <g transform="translate(270,90)">
+    <circle r="55" fill="none" stroke="rgba(240,237,232,0.18)"/>
+    <circle cx="47.6" cy="-27.5" r="10" fill="#2E9E5A"/>
+    <circle cx="55" cy="0" r="10" fill="#2563EB"/>
+    <circle cx="47.6" cy="27.5" r="10" fill="#7C3AED"/>
+    <text x="0" y="90" text-anchor="middle" class="lbl">Analogous</text>
+    <text x="0" y="106" text-anchor="middle" class="sub">adjacent, 30 to 60 deg</text>
+  </g>
+
+  <!-- Triadic -->
+  <g transform="translate(450,90)">
+    <circle r="55" fill="none" stroke="rgba(240,237,232,0.18)"/>
+    <circle cx="55" cy="0" r="10" fill="#2563EB"/>
+    <circle cx="-27.5" cy="47.6" r="10" fill="#E63946"/>
+    <circle cx="-27.5" cy="-47.6" r="10" fill="#F4C842"/>
+    <text x="0" y="90" text-anchor="middle" class="lbl">Triadic</text>
+    <text x="0" y="106" text-anchor="middle" class="sub">120 degrees apart</text>
+  </g>
+
+  <!-- Square -->
+  <g transform="translate(630,90)">
+    <circle r="55" fill="none" stroke="rgba(240,237,232,0.18)"/>
+    <circle cx="55" cy="0" r="10" fill="#2563EB"/>
+    <circle cx="0" cy="55" r="10" fill="#E63946"/>
+    <circle cx="-55" cy="0" r="10" fill="#F4C842"/>
+    <circle cx="0" cy="-55" r="10" fill="#2E9E5A"/>
+    <text x="0" y="90" text-anchor="middle" class="lbl">Square</text>
+    <text x="0" y="106" text-anchor="middle" class="sub">90 degrees apart</text>
+  </g>
+
+  <!-- Monochromatic -->
+  <g transform="translate(810,90)">
+    <circle r="55" fill="none" stroke="rgba(240,237,232,0.18)"/>
+    <circle cx="0" cy="0" r="10" fill="#0F2044"/>
+    <circle cx="18" cy="0" r="10" fill="#1E4080"/>
+    <circle cx="-18" cy="0" r="10" fill="#3D72CC"/>
+    <circle cx="36" cy="0" r="10" fill="#7AAEFF"/>
+    <text x="0" y="90" text-anchor="middle" class="lbl">Monochromatic</text>
+    <text x="0" y="106" text-anchor="middle" class="sub">value varies, hue fixed</text>
+  </g>
+
+  <text x="450" y="250" text-anchor="middle" class="sub">Split Complementary, Tetradic, and Compound extend these same rules; see HarmonyEngine strategies.</text>
+</svg>
