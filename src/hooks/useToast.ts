@@ -1,8 +1,12 @@
 import { useSyncExternalStore } from 'react';
 
+interface ToastSnapshot {
+  message: string;
+  visible: boolean;
+}
+
 class ToastController {
-  private message = '';
-  private visible = false;
+  private snapshot: ToastSnapshot = { message: '', visible: false };
   private timer: ReturnType<typeof setTimeout> | undefined;
   private listeners = new Set<() => void>();
 
@@ -11,19 +15,22 @@ class ToastController {
     return () => this.listeners.delete(listener);
   };
 
-  getSnapshot = (): { message: string; visible: boolean } => ({
-    message: this.message,
-    visible: this.visible
-  });
+  // Returns the same cached object reference until the state actually
+  // changes. useSyncExternalStore requires a stable snapshot reference
+  // across calls with no change, or it will re-render in an infinite
+  // loop (React error #185).
+  getSnapshot = (): ToastSnapshot => this.snapshot;
+
+  private setSnapshot(next: ToastSnapshot): void {
+    this.snapshot = next;
+    this.listeners.forEach((l) => l());
+  }
 
   show(message: string): void {
-    this.message = message;
-    this.visible = true;
-    this.listeners.forEach((l) => l());
+    this.setSnapshot({ message, visible: true });
     clearTimeout(this.timer);
     this.timer = setTimeout(() => {
-      this.visible = false;
-      this.listeners.forEach((l) => l());
+      this.setSnapshot({ message: this.snapshot.message, visible: false });
     }, 2400);
   }
 }
